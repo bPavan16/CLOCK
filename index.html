@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MY CLOCK</title>
+
+        <!-- The StyleSheet Begins Here  -->
+
+        <style>
+            body {
+                background: repeating-linear-gradient(123deg, rgb(13, 13, 82), rgb(74, 13, 74));
+                min-height: min-content;
+                max-height: max-content;
+                /* background: repeating-linear-gradient(); */
+            }
+
+            .container {
+                border: solid 1px white;
+                box-shadow: 2px;
+                border-radius: 20px;
+                margin: 230px auto auto;
+                height: 250px;
+                width: auto;
+                padding: 10px 10px;
+                max-width: 400px;
+                background: linear-gradient(130deg, rgb(3, 3, 3), rgb(15, 15, 61), rgb(8, 8, 74), rgb(6, 6, 72), black);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                backface-visibility: 4px;
+            }
+
+            .big {
+                font-family: 'Segoe UI', sans-serif;
+                color: white;
+                font-size: 70px;
+            }
+
+            .small {
+                color: white;
+                margin: 35px 40px;
+                font-size: 20px;
+            }
+
+            .timez {
+                color: white;
+                font-size: 20px;
+            }
+        </style>
+
+
+        <!-- The StyleSheet Ends Here  -->
+
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="high">
+                <span id="hr" class="big">00</span>
+                <span class="big">&nbsp;:&nbsp;</span>
+                <span id="min" class="big">00</span>
+                <span class="big">&nbsp;:&nbsp;</span>
+                <span id="sec" class="big">00</span>
+                <!-- <span class="timez">AM</span> -->
+            </div>
+            <div class="low">
+                <span class="small">HRS</span>
+                <span class="small">MIN</span>
+                <span class="small">SEC</span>
+            </div>
+
+        </div>
+
+        <!-- The Script Begins Here  -->
+        <script>
+
+            let hr = document.getElementById('hr');
+            let min = document.getElementById('min');
+            let sec = document.getElementById('sec');
+
+            let curr = new Date();
+
+            console.log(curr)
+            console.log(curr.getMinutes())
+
+            hr.innerText = curr.getHours();
+            min.innerText = curr.getMinutes();
+            sec.innerText = curr.getSeconds();;
+
+            setInterval(() => {
+                let curr2 = new Date();
+                hr.innerText = curr2.getHours();
+                min.innerText = curr2.getMinutes();
+                sec.innerText = curr2.getSeconds();
+            }, 1000);
+
+
+
+
+
+
+
+        </script>
+        <!-- The Script Begins Here  -->
+    </body>
+
+</html>
